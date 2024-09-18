@@ -1,0 +1,49 @@
+{
+    "tecnologias" : [
+        {
+            "nombre" : "C#",
+            "icono" : "C#"
+        },
+        {
+            "nombre" : "Java",
+            "icono" : "Java"
+        },
+        {
+            "nombre" : "PHP",
+            "icono" : "PHP"
+        },
+        {
+            "nombre" : "Javascript",
+            "icono" : "Javascript"
+        },
+        {
+            "nombre" : "Python",
+            "icono" : "Python"
+        },
+        {
+            "nombre" : "Kotlin",
+            "icono" : "Kotlin"
+        },
+        {
+            "nombre" : "HTML",
+            "icono" : "HTML"
+        },
+        {
+            "nombre" : "CSS",
+            "icono" : "CSS"
+        }
+    ],
+    "proyectos" : [
+        {
+            "nombre" : "Curriculum",
+            "descripcion" : "Curriculum propio",
+            "img" : "",
+            "links" : [
+                {
+                    "nombre" : "Curriculum",
+                    "url" : "https://orisluciano.github.io/curriculum/"
+                }
+            ]
+        }
+    ]
+}
