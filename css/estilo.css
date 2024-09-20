@@ -34,6 +34,10 @@ a:hover{
     margin-right: auto;
 }
 
+.marginR60 {
+    margin-right: 60px;
+}
+
 .displayFlex {
     display: flex;
     flex-wrap: wrap;
@@ -146,6 +150,13 @@ svg {
 .sombraTexto :hover {
     text-shadow: 0 0 20px #f50b0b;
     color: rgb(164, 247, 250);
+}
+
+.noSeleccionado {
+    color: currentColor;
+}
+.seleccionado {
+    color: #083f12;
 }
 
 

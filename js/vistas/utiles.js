@@ -12,6 +12,8 @@ class UtilesVistas {
     constructor(parameters) {
         
     }
+
+    
 }
 
 export default UtilesVistas;
