@@ -91,6 +91,10 @@ a:hover{
     margin-bottom: 16px;
 }
 
+.marginBottom5 {
+    margin-bottom: 5%;
+}
+
 .backColorWhite {
     background-color: white;
 }
@@ -157,8 +161,29 @@ svg {
 }
 .seleccionado {
     color: #083f12;
+    border-top: solid;
+    border-top-width: 1px;
+    margin-top: -1px;
 }
 
+.borderTopInset {
+    border-top: inset;
+    border-top-width: 1px;
+}
+
+.contentCenter {
+    justify-content: center;
+}
+
+.elementoCentrado {
+    align-items: center;
+    cursor: pointer;
+    display: flex !important;
+    flex-direction: row;
+    height: 52px;
+    justify-content: center;
+    text-transform: uppercase;
+}
 
 @media (min-width: 601px) {
     .w3-col.m1 {

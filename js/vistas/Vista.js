@@ -35,7 +35,7 @@ class Vista {
         }
         let proyects = document.getElementById(this.utiles.ids.botones.proyects);
         proyects.onclick = function (params) {
-            alert("funciona");
+            esto.proyectosVista();
             esto.marcarBotones(proyects.id);
         }
         let form = document.getElementById(this.utiles.ids.botones.form);
@@ -49,10 +49,10 @@ class Vista {
         this.botonesIds.forEach(e => {
             if (e === id) {
                 let marcado = document.getElementById(id);
-                marcado.className = "seleccionado marginR60";
+                marcado.className = "seleccionado marginR60 elementoCentrado";
             } else {
                 let noMarcado = document.getElementById(e);
-                noMarcado.className = "noSeleccionado marginR60";
+                noMarcado.className = "noSeleccionado marginR60 elementoCentrado";
             }
         });
     }
@@ -86,6 +86,31 @@ class Vista {
             let nombre = document.createElement("p");
             nombre.innerHTML = e.nombre;
             span.appendChild(nombre);
+        });
+    }
+
+    proyectosVista(){
+        this.vaciarRoot();
+        let div = document.createElement("div");
+        div.className = "displayFlex margin15";
+        this.root.appendChild(div);
+        let proyectos = this.datos.proyectos;
+        proyectos.forEach( e => {
+            let caja = document.createElement("div");
+            div.appendChild(caja);
+            let nombre = document.createElement("h3");
+            nombre.innerHTML = e.nombre;
+            caja.appendChild(nombre);
+            let descripcion = document.createElement("h4");
+            descripcion.innerHTML = e.descripcion;
+            caja.appendChild(descripcion);
+            e.links.forEach(l => {
+                let link = document.createElement("a");
+                link.innerHTML = l.nombre;
+                link.href = l.url;
+                link.target = "_blank";
+                caja.appendChild(link);
+            });
         });
     }
 }

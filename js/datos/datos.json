@@ -44,6 +44,17 @@
                     "url" : "https://orisluciano.github.io/curriculum/"
                 }
             ]
+        },
+        {
+            "nombre" : "Portafolio",
+            "descripcion" : "Portafolio propio",
+            "img" : "",
+            "links" : [
+                {
+                    "nombre" : "Portafolio",
+                    "url" : "https://orisluciano.github.io/portafolio/"
+                }
+            ]
         }
     ]
 }
