@@ -28,21 +28,21 @@ class Vista {
             esto.tecnologiasVista();
             esto.marcarBotones(tecs.id);
         }
-        let exp = document.getElementById(this.utiles.ids.botones.exp);
+        /*let exp = document.getElementById(this.utiles.ids.botones.exp);
         exp.onclick = function (params) {
             alert("funciona");
             esto.marcarBotones(exp.id);
-        }
+        }*/
         let proyects = document.getElementById(this.utiles.ids.botones.proyects);
         proyects.onclick = function (params) {
             esto.proyectosVista();
             esto.marcarBotones(proyects.id);
         }
-        let form = document.getElementById(this.utiles.ids.botones.form);
+        /*let form = document.getElementById(this.utiles.ids.botones.form);
         form.onclick = function (params) {
             alert("funciona");
             esto.marcarBotones(form.id);
-        }
+        }*/
     }
 
     marcarBotones(id){
