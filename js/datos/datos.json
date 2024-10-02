@@ -2,35 +2,47 @@
     "tecnologias" : [
         {
             "nombre" : "C#",
-            "icono" : "C#"
+            "icono" : "http://localhost/portafolio/recursos/imagenes/csharp-svgrepo-com.svg"
         },
         {
             "nombre" : "Java",
-            "icono" : "Java"
+            "icono" : "http://localhost/portafolio/recursos/imagenes/java-logo-svgrepo-com.svg"
         },
         {
             "nombre" : "PHP",
-            "icono" : "PHP"
+            "icono" : "http://localhost/portafolio/recursos/imagenes/php-svgrepo-com.svg"
         },
         {
             "nombre" : "Javascript",
-            "icono" : "Javascript"
+            "icono" : "http://localhost/portafolio/recursos/imagenes/javascript-svgrepo-com.svg"
         },
         {
             "nombre" : "Python",
-            "icono" : "Python"
+            "icono" : "http://localhost/portafolio/recursos/imagenes/python-svgrepo-com.svg"
         },
         {
             "nombre" : "Kotlin",
-            "icono" : "Kotlin"
+            "icono" : "http://localhost/portafolio/recursos/imagenes/kotlin-svgrepo-com.svg"
         },
         {
             "nombre" : "HTML",
-            "icono" : "HTML"
+            "icono" : "http://localhost/portafolio/recursos/imagenes/html-5-svgrepo-com.svg"
         },
         {
             "nombre" : "CSS",
-            "icono" : "CSS"
+            "icono" : "http://localhost/portafolio/recursos/imagenes/css-3-svgrepo-com.svg"
+        },
+        {
+            "nombre" : "MySQL",
+            "icono" : "http://localhost/portafolio/recursos/imagenes/mysql-logo-svgrepo-com.svg"
+        },
+        {
+            "nombre" : "SQL Server",
+            "icono" :"http://localhost/portafolio/recursos/imagenes/microsoft-sql-server-logo-svgrepo-com.svg"
+        },
+        {
+            "nombre" : "MongoDB",
+            "icono" : "http://localhost/portafolio/recursos/imagenes/mongodb-logo-svgrepo-com.svg"
         }
     ],
     "proyectos" : [

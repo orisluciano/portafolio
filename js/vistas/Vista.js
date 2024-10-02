@@ -6,8 +6,8 @@ class Vista {
     root = document.getElementById(this.utiles.ids.root);
     datos = "";
     botonesIds = [ this.utiles.ids.botones.sobreMi,
-        this.utiles.ids.botones.exp,
-        this.utiles.ids.botones.form,
+        //this.utiles.ids.botones.exp,
+        //this.utiles.ids.botones.form,
         this.utiles.ids.botones.proyects,
         this.utiles.ids.botones.tec
     ];
@@ -77,15 +77,22 @@ class Vista {
     tecnologiasVista(){
         this.vaciarRoot();
         let div = document.createElement("div");
-        div.className = "displayFlex margin15";
+        div.className = "displayFlex";
         this.root.appendChild(div);
         let tecnologias = this.datos.tecnologias;
         tecnologias.forEach(e => {
             let span = document.createElement("span");
             div.appendChild(span);
-            let nombre = document.createElement("p");
+            let icono = document.createElement("img");
+            icono.className = "img150";
+            let svg = fetch(e.icono);
+            svg.then( s => icono.src = e.icono);
+            //icono.innerHTML = e.icono;
+            div.appendChild(icono);
+            console.log(e.icono);
+            /*let nombre = document.createElement("p");
             nombre.innerHTML = e.nombre;
-            span.appendChild(nombre);
+            span.appendChild(nombre);*/
         });
     }
 
