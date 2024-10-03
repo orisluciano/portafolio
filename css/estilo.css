@@ -12,6 +12,7 @@ body {
     font-size: 15px;
     background-color: rgb(255, 255, 255);
     color: #3e7949;
+    overflow: scroll;
 }
 
 a {
@@ -22,6 +23,13 @@ a {
 a:hover{
     text-shadow: 0 0 10px rgb(0, 214, 221);
     color: cadetblue;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .margin15 {
@@ -63,8 +71,12 @@ a:hover{
     width: auto;
 }
 
+.width950 {
+    width: 950px;
+}
+
 .maxWidth {
-    max-width: 900px;
+    max-width: 950px;
 }
 
 .sombra {
@@ -202,8 +214,21 @@ svg {
     text-transform: uppercase;
 }
 
-.img150{
+.img80 {
+    height: 80px;
+}
+
+.img150 {
     height: 150px;
+}
+
+.img200 {
+    height: 200px;
+}
+
+.imgSobreMi {
+    width: 250px;
+    border-radius: 50%;
 }
 
 @media (min-width: 601px) {
