@@ -32,6 +32,14 @@ ul {
     justify-content: center;
 }
 
+.iconoLista:hover {
+    box-shadow: 0 0 10px rgb(35 223 37);
+}
+
+.borderCirculo {
+    border-radius: 50%;
+}
+
 .margin15 {
     margin-left: 15%;
     margin-right: 15%;
