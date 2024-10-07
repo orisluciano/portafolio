@@ -184,8 +184,7 @@ ul {
 
 svg {
     fill: currentColor;
-    max-height: 20px;
-    margin : 0px 8px 0px 8px;
+    max-height: 15px;
 }
 
 .sombraTexto :hover {
