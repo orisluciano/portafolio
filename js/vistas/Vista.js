@@ -76,27 +76,28 @@ class Vista {
         img.className = "imgSobreMi";
         div.appendChild(img);
         let texto = document.createElement("div");
-        texto.innerHTML = "Hola. Soy Luciano Oris." + 
-        "Soy un programador que busca poner mis herramientas al servicio de los demas." +
-        "Llevo algun tiempo haciendolo y planeao seguir haciendolo por mucho más tiempo.";
+        texto.className = "estiloTexto";
+        texto.innerHTML = "Hola. Soy Luciano Oris. " + 
+        "Soy un programador que busca poner sus herramientas al servicio de los demas. " +
+        "Llevo algun tiempo haciendolo y planeo seguir haciendolo por mucho más tiempo.";
         div.appendChild(texto);
     }
 
     tecnologiasVista(){
         this.vaciarRoot();
         let div = document.createElement("div");
-        div.className = "displayFlex";
+        div.className = "displayFlex estiloTexto";
         this.root.appendChild(div);
-        div.innerHTML = "¿Que es lo que hago?" +
-        "Ofrezco mis servicios como desarrollador web, donde me ocupo tanto del backend como del frontend." +
-        "Tambien puedo proover de aplicaciones moviles para dispositivos Android." +
+        div.innerHTML = "¿Que es lo que hago? " +
+        "Ofrezco mis servicios como desarrollador web, donde me ocupo tanto del backend como del frontend. " +
+        "Tambien puedo proveer de aplicaciones moviles para dispositivos Android. " +
         "Por ultimo, tambien ofrezco la posibilidad de tener una aplicación de escritorio a medida.";
         let tecnologias = this.datos.tecnologias;
         tecnologias.forEach(e => {
             let span = document.createElement("span");
             div.appendChild(span);
             let icono = document.createElement("img");
-            icono.className = "img200";
+            icono.className = "img200 margin5";
             let svg = fetch(e.icono);
             svg.then( s => icono.src = e.icono);
             //icono.innerHTML = e.icono;
