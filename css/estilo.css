@@ -108,6 +108,10 @@ ul {
     padding-right: 20px;
 }
 
+.margin5 {
+    margin: 5px;
+}
+
 .marginRight5 {
     margin-right: 5px;
 }
@@ -223,6 +227,12 @@ svg {
     height: 52px;
     justify-content: center;
     text-transform: uppercase;
+}
+
+.estiloTexto {
+    margin-top: 20px;
+    font-size: large;
+    letter-spacing: 2px;
 }
 
 .img80 {
