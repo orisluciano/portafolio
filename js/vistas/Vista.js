@@ -110,28 +110,75 @@ class Vista {
     }
 
     proyectosVista(){
+        let esto = this;
         this.vaciarRoot();
         let div = document.createElement("div");
         div.className = "displayFlex";
         this.root.appendChild(div);
+        this.crearPopup(div);
         let proyectos = this.datos.proyectos;
         proyectos.forEach( e => {
+            let id = "div" + e.nombre;
             let caja = document.createElement("div");
+            caja.id = id;
             div.appendChild(caja);
-            let nombre = document.createElement("h3");
+            /*let nombre = document.createElement("h3");
             nombre.innerHTML = e.nombre;
             caja.appendChild(nombre);
             let descripcion = document.createElement("h4");
             descripcion.innerHTML = e.descripcion;
-            caja.appendChild(descripcion);
-            e.links.forEach(l => {
+            caja.appendChild(descripcion);*/
+            let img = document.createElement("img");
+            img.className = "img200 margin5";
+            img.src = e.img;
+            img.onclick = function() {
+                esto.mostrarPopup(e.nombre, e.descripcion, e.links);
+                esto.asignarFuncionPopup(e.nombre, e.descripcion, e.links);
+            }
+            caja.appendChild(img);
+            /*e.links.forEach(l => {
                 let link = document.createElement("a");
                 link.innerHTML = l.nombre;
                 link.href = l.url;
                 link.target = "_blank";
                 caja.appendChild(link);
-            });
+            });*/
         });
+    }
+
+    mostrarPopup(nombre, descripcion, links) {
+        let popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+        let hNombre = document.getElementById("nombreProyecto");
+        hNombre.innerHTML = nombre;
+        let hDesc = document.getElementById("descripcionProyecto");
+        hDesc.innerHTML = descripcion;
+        let dLinks = document.getElementById("linksProyectos");
+        dLinks.innerHTML = "";
+        links.forEach(l => {
+            let link = document.createElement("a");
+            link.innerHTML = l.nombre;
+            link.href = l.url;
+            link.target = "_blank";
+            dLinks.appendChild(link);
+        });
+    }
+
+    async crearPopup(padre){
+        let dir = "./html/modalProyecto.html";
+        let res = await fetch(dir);
+        let archivo = await res.text();
+        let div = document.createElement("div");
+        div.innerHTML = archivo;
+        padre.appendChild(div);
+    }
+
+    asignarFuncionPopup(nombre, descripcion, links){
+        let esto = this;
+        let popup = document.getElementById("popup");
+        popup.onclick = function() {
+            esto.mostrarPopup(nombre, descripcion, links);
+        }
     }
 }
 

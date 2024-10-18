@@ -49,7 +49,7 @@
         {
             "nombre" : "Curriculum",
             "descripcion" : "Curriculum propio",
-            "img" : "",
+            "img" : "./recursos/imagenes/portfolio-bag-svgrepo-com.svg",
             "links" : [
                 {
                     "nombre" : "Curriculum",
@@ -60,7 +60,7 @@
         {
             "nombre" : "Portafolio",
             "descripcion" : "Portafolio propio",
-            "img" : "",
+            "img" : "./recursos/imagenes/curriculum-resume-svgrepo-com (1).svg",
             "links" : [
                 {
                     "nombre" : "Portafolio",
