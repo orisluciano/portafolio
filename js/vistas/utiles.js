@@ -7,7 +7,8 @@ class UtilesVistas {
             proyects : "proyects",
             form : "form"
         },
-        root : "root"
+        root : "root",
+        modal : "myModal"
     }
     constructor(parameters) {
         

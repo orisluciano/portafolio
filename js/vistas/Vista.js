@@ -4,6 +4,7 @@ import UtilesVistas from "./utiles.js";
 class Vista {
     utiles = new UtilesVistas();
     root = document.getElementById(this.utiles.ids.root);
+    modal = document.getElementById(this.utiles.ids.modal);
     datos = "";
     botonesIds = [ this.utiles.ids.botones.sobreMi,
         //this.utiles.ids.botones.exp,
@@ -115,7 +116,8 @@ class Vista {
         let div = document.createElement("div");
         div.className = "displayFlex";
         this.root.appendChild(div);
-        this.crearPopup(div);
+        //this.crearPopup(div);
+        this.llenarModal();
         let proyectos = this.datos.proyectos;
         proyectos.forEach( e => {
             let id = "div" + e.nombre;
@@ -147,8 +149,9 @@ class Vista {
     }
 
     mostrarPopup(nombre, descripcion, links) {
-        let popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
+        /*let popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");*/
+        this.modal.style.display = "block";
         let hNombre = document.getElementById("nombreProyecto");
         hNombre.innerHTML = nombre;
         let hDesc = document.getElementById("descripcionProyecto");
@@ -173,11 +176,32 @@ class Vista {
         padre.appendChild(div);
     }
 
+    async llenarModal(){
+        let dir = "./html/modalProyecto.html";
+        let res = await fetch(dir);
+        let archivo = await res.text();
+        this.modal.innerHTML = "";
+        this.modal.innerHTML = archivo;
+        this.funcionesModal();
+    }
+
     asignarFuncionPopup(nombre, descripcion, links){
         let esto = this;
-        let popup = document.getElementById("popup");
+        /*let popup = document.getElementById("popup");
         popup.onclick = function() {
             esto.mostrarPopup(nombre, descripcion, links);
+        }*/
+       /*let modalContent = document.getElementById("modalContenido");
+       modalContent.onclick = function() {
+            esto.mostrarPopup(nombre, descripcion, links);
+       }*/
+    }
+
+    funcionesModal(){
+        let esto = this;
+        let btnCerrar = document.getElementById("btnCerrar");
+        btnCerrar.onclick = function() {
+            esto.modal.style.display = "none";
         }
     }
 }
