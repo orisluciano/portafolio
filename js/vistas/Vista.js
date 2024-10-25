@@ -12,6 +12,7 @@ class Vista {
         this.utiles.ids.botones.proyects,
         this.utiles.ids.botones.tec
     ];
+    slideIndex = 1;
 
     constructor(parameters) {    
     }
@@ -134,8 +135,9 @@ class Vista {
             img.className = "img200 margin5";
             img.src = e.img;
             img.onclick = function() {
-                esto.mostrarPopup(e.nombre, e.descripcion, e.links);
+                esto.mostrarPopup(e.nombre, e.descripcion, e.links, e.capturas);
                 esto.asignarFuncionPopup(e.nombre, e.descripcion, e.links);
+                esto.cargarCapturas(e.capturas);
             }
             caja.appendChild(img);
             /*e.links.forEach(l => {
@@ -148,7 +150,7 @@ class Vista {
         });
     }
 
-    mostrarPopup(nombre, descripcion, links) {
+    mostrarPopup(nombre, descripcion, links, capturas) {
         /*let popup = document.getElementById("myPopup");
         popup.classList.toggle("show");*/
         this.modal.style.display = "block";
@@ -165,6 +167,8 @@ class Vista {
             link.target = "_blank";
             dLinks.appendChild(link);
         });
+        let imgCapturas = document.getElementById("imgProyecto");
+        //imgCapturas.src = capturas[0];
     }
 
     async crearPopup(padre){
@@ -183,6 +187,7 @@ class Vista {
         this.modal.innerHTML = "";
         this.modal.innerHTML = archivo;
         this.funcionesModal();
+        this.cargarCarrusel();
     }
 
     asignarFuncionPopup(nombre, descripcion, links){
@@ -203,6 +208,55 @@ class Vista {
         btnCerrar.onclick = function() {
             esto.modal.style.display = "none";
         }
+    }
+
+    async cargarCarrusel(){
+        let dir = "./html/carruselImagenes.html";
+        let res = await fetch(dir);
+        let archivo = await res.text();
+        let carrusel = document.getElementById("carruselImg");
+        carrusel.innerHTML = "";
+        carrusel.innerHTML = archivo;
+    }
+
+    cargarCapturas(capturas){
+        let carruselContainer = document.getElementById("carruselContainer");
+        carruselContainer.innerHTML = "";
+        capturas.forEach(c => {
+            let d = document.createElement("div");
+            d.className = "mySlides fade";
+            carruselContainer.appendChild(d);
+            let img = document.createElement("img");
+            img.src = c;
+            img.style.width = "100%";
+            d.appendChild(img);
+        });
+        let slideIndex
+        this.showSlides(1);
+    }
+
+    plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+      
+    currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+      
+    showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {this.slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[this.slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
     }
 }
 
