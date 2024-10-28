@@ -62,7 +62,9 @@
             "nombre" : "Portafolio",
             "descripcion" : "Portafolio propio",
             "img" : "./recursos/imagenes/curriculum-resume-svgrepo-com (1).svg",
-            "capturas" : ["./recursos/imagenes/curriculum-resume-svgrepo-com (1).svg"],
+            "capturas" : ["./recursos/imagenes/curriculum-resume-svgrepo-com (1).svg",
+            "./recursos/imagenes/curriculum-resume-svgrepo-com (1).svg",
+            "./recursos/imagenes/mongodb-logo-svgrepo-com.svg"],
             "links" : [
                 {
                     "nombre" : "Portafolio",

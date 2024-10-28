@@ -233,21 +233,40 @@ class Vista {
         });
         let slideIndex
         this.showSlides(1);
+        this.cargarBotonesCapturas(carruselContainer);
+    }
+
+    cargarBotonesCapturas(container){
+        let esto = this;
+        let antes = document.createElement("a");
+        antes.innerHTML = "<"
+        antes.className = "prev";
+        antes.onclick = function() {
+            esto.plusSlides(-1);
+        }
+        container.appendChild(antes);
+        let siguientes = document.createElement("a");
+        siguientes.innerHTML = ">"
+        siguientes.className = "next";
+        siguientes.onclick = function() {
+            esto.plusSlides(1);
+        }
+        container.appendChild(siguientes);
     }
 
     plusSlides(n) {
-        showSlides(slideIndex += n);
+        this.showSlides(this.slideIndex += n);
     }
       
     currentSlide(n) {
-        showSlides(slideIndex = n);
+        this.showSlides(this.slideIndex = n);
     }
       
     showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
         let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}    
+        if (n > slides.length) {this.slideIndex = 1}    
         if (n < 1) {this.slideIndex = slides.length}
         for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";  
@@ -256,7 +275,7 @@ class Vista {
           dots[i].className = dots[i].className.replace(" active", "");
         }
         slides[this.slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " active";
+        dots[this.slideIndex-1].className += " active";
     }
 }
 
