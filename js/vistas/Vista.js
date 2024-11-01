@@ -10,7 +10,7 @@ class Vista {
         //this.utiles.ids.botones.exp,
         //this.utiles.ids.botones.form,
         this.utiles.ids.botones.proyects,
-        this.utiles.ids.botones.tec
+        //this.utiles.ids.botones.tec
     ];
     slideIndex = 1;
 
@@ -25,11 +25,11 @@ class Vista {
             esto.sobreMiVista();
             esto.marcarBotones(mi.id);
         }
-        let tecs = document.getElementById(this.utiles.ids.botones.tec);
+        /*let tecs = document.getElementById(this.utiles.ids.botones.tec);
         tecs.onclick = function (params) {
             esto.tecnologiasVista();
             esto.marcarBotones(tecs.id);
-        }
+        }*/
         /*let exp = document.getElementById(this.utiles.ids.botones.exp);
         exp.onclick = function (params) {
             alert("funciona");
@@ -51,10 +51,10 @@ class Vista {
         this.botonesIds.forEach(e => {
             if (e === id) {
                 let marcado = document.getElementById(id);
-                marcado.className = "seleccionado marginR60 elementoCentrado";
+                marcado.className = "seleccionado marginLeft30 marginRight30 elementoCentrado";
             } else {
                 let noMarcado = document.getElementById(e);
-                noMarcado.className = "noSeleccionado marginR60 elementoCentrado";
+                noMarcado.className = "noSeleccionado marginLeft30 marginRight30 elementoCentrado";
             }
         });
     }
@@ -70,7 +70,7 @@ class Vista {
 
     sobreMiVista(){
         this.vaciarRoot();
-        let div = document.createElement("div");
+        /*let div = document.createElement("div");
         div.className = "displayFlex contentCenter";
         this.root.appendChild(div);
         let img = document.createElement("img");
@@ -82,7 +82,13 @@ class Vista {
         texto.innerHTML = "Hola. Soy Luciano Oris. " + 
         "Soy un programador que busca poner sus herramientas al servicio de los demas. " +
         "Llevo algun tiempo haciendolo y planeo seguir haciendolo por mucho más tiempo.";
-        div.appendChild(texto);
+        div.appendChild(texto);*/
+        /*let dir = "./html/sobreMi.html";
+        let res = await fetch(dir);
+        let archivo = await res.text();
+        this.root.innerHTML = archivo;*/
+        let sobreMi = new SobreMiVista();
+        sobreMi.cargarFormulario();
     }
 
     tecnologiasVista(){

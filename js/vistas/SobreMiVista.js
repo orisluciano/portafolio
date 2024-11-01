@@ -2,12 +2,15 @@ import UtilesVistas from "./utiles.js";
 
 class SobreMiVista {
     utiles = new UtilesVistas();
+    dir = "./html/sobreMi.html";
     constructor() {
         
     }
-    cargarFormulario(){
+    async cargarFormulario(){
         let root = document.getElementById(this.utiles.ids.root);
-        root.innerHTML = "Soy un programador que busca poner mis herramientas al servicio de los demas."
+        let res = await fetch(this.dir);
+        let archivo = await res.text();
+        root.innerHTML = archivo;
     }
 }
 
