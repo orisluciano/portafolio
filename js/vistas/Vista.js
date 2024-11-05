@@ -1,3 +1,4 @@
+import ProyectosVista from "./ProyectosVista.js";
 import SobreMiVista from "./SobreMiVista.js";
 import UtilesVistas from "./utiles.js";
 
@@ -125,7 +126,7 @@ class Vista {
         this.root.appendChild(div);
         //this.crearPopup(div);
         this.llenarModal();
-        let proyectos = this.datos.proyectos;
+        /*let proyectos = this.datos.proyectos;
         proyectos.forEach( e => {
             let id = "div" + e.nombre;
             let caja = document.createElement("div");
@@ -137,7 +138,7 @@ class Vista {
             let descripcion = document.createElement("h4");
             descripcion.innerHTML = e.descripcion;
             caja.appendChild(descripcion);*/
-            let img = document.createElement("img");
+            /*let img = document.createElement("img");
             img.className = "img200 margin5";
             img.src = e.img;
             img.onclick = function() {
@@ -153,7 +154,9 @@ class Vista {
                 link.target = "_blank";
                 caja.appendChild(link);
             });*/
-        });
+        //});
+        let pVista = new ProyectosVista(this.datos.proyectos);
+        pVista.cargarFormulario();
     }
 
     mostrarPopup(nombre, descripcion, links, capturas) {
