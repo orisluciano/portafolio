@@ -8,10 +8,7 @@ class Vista {
     modal = document.getElementById(this.utiles.ids.modal);
     datos = "";
     botonesIds = [ this.utiles.ids.botones.sobreMi,
-        //this.utiles.ids.botones.exp,
-        //this.utiles.ids.botones.form,
-        this.utiles.ids.botones.proyects,
-        //this.utiles.ids.botones.tec
+        this.utiles.ids.botones.proyects
     ];
     slideIndex = 1;
 
@@ -26,26 +23,11 @@ class Vista {
             esto.sobreMiVista();
             esto.marcarBotones(mi.id);
         }
-        /*let tecs = document.getElementById(this.utiles.ids.botones.tec);
-        tecs.onclick = function (params) {
-            esto.tecnologiasVista();
-            esto.marcarBotones(tecs.id);
-        }*/
-        /*let exp = document.getElementById(this.utiles.ids.botones.exp);
-        exp.onclick = function (params) {
-            alert("funciona");
-            esto.marcarBotones(exp.id);
-        }*/
         let proyects = document.getElementById(this.utiles.ids.botones.proyects);
         proyects.onclick = function (params) {
             esto.proyectosVista();
             esto.marcarBotones(proyects.id);
         }
-        /*let form = document.getElementById(this.utiles.ids.botones.form);
-        form.onclick = function (params) {
-            alert("funciona");
-            esto.marcarBotones(form.id);
-        }*/
     }
 
     marcarBotones(id){
@@ -71,23 +53,6 @@ class Vista {
 
     sobreMiVista(){
         this.vaciarRoot();
-        /*let div = document.createElement("div");
-        div.className = "displayFlex contentCenter";
-        this.root.appendChild(div);
-        let img = document.createElement("img");
-        img.src = "./recursos/imagenes/sobremirecortada.jpg";
-        img.className = "imgSobreMi";
-        div.appendChild(img);
-        let texto = document.createElement("div");
-        texto.className = "estiloTexto";
-        texto.innerHTML = "Hola. Soy Luciano Oris. " + 
-        "Soy un programador que busca poner sus herramientas al servicio de los demas. " +
-        "Llevo algun tiempo haciendolo y planeo seguir haciendolo por mucho más tiempo.";
-        div.appendChild(texto);*/
-        /*let dir = "./html/sobreMi.html";
-        let res = await fetch(dir);
-        let archivo = await res.text();
-        this.root.innerHTML = archivo;*/
         let sobreMi = new SobreMiVista();
         sobreMi.cargarFormulario();
     }
@@ -109,12 +74,8 @@ class Vista {
             icono.className = "img200 margin5";
             let svg = fetch(e.icono);
             svg.then( s => icono.src = e.icono);
-            //icono.innerHTML = e.icono;
             div.appendChild(icono);
             console.log(e.icono);
-            /*let nombre = document.createElement("p");
-            nombre.innerHTML = e.nombre;
-            span.appendChild(nombre);*/
         });
     }
 
@@ -124,44 +85,12 @@ class Vista {
         let div = document.createElement("div");
         div.className = "displayFlex";
         this.root.appendChild(div);
-        //this.crearPopup(div);
         this.llenarModal();
-        /*let proyectos = this.datos.proyectos;
-        proyectos.forEach( e => {
-            let id = "div" + e.nombre;
-            let caja = document.createElement("div");
-            caja.id = id;
-            div.appendChild(caja);
-            /*let nombre = document.createElement("h3");
-            nombre.innerHTML = e.nombre;
-            caja.appendChild(nombre);
-            let descripcion = document.createElement("h4");
-            descripcion.innerHTML = e.descripcion;
-            caja.appendChild(descripcion);*/
-            /*let img = document.createElement("img");
-            img.className = "img200 margin5";
-            img.src = e.img;
-            img.onclick = function() {
-                esto.mostrarPopup(e.nombre, e.descripcion, e.links, e.capturas);
-                esto.asignarFuncionPopup(e.nombre, e.descripcion, e.links);
-                esto.cargarCapturas(e.capturas);
-            }
-            caja.appendChild(img);
-            /*e.links.forEach(l => {
-                let link = document.createElement("a");
-                link.innerHTML = l.nombre;
-                link.href = l.url;
-                link.target = "_blank";
-                caja.appendChild(link);
-            });*/
-        //});
         let pVista = new ProyectosVista(this.datos.proyectos);
         pVista.cargarFormulario();
     }
 
     mostrarPopup(nombre, descripcion, links, capturas) {
-        /*let popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");*/
         this.modal.style.display = "block";
         let hNombre = document.getElementById("nombreProyecto");
         hNombre.innerHTML = nombre;
@@ -176,8 +105,6 @@ class Vista {
             link.target = "_blank";
             dLinks.appendChild(link);
         });
-        let imgCapturas = document.getElementById("imgProyecto");
-        //imgCapturas.src = capturas[0];
     }
 
     async crearPopup(padre){
@@ -201,14 +128,6 @@ class Vista {
 
     asignarFuncionPopup(nombre, descripcion, links){
         let esto = this;
-        /*let popup = document.getElementById("popup");
-        popup.onclick = function() {
-            esto.mostrarPopup(nombre, descripcion, links);
-        }*/
-       /*let modalContent = document.getElementById("modalContenido");
-       modalContent.onclick = function() {
-            esto.mostrarPopup(nombre, descripcion, links);
-       }*/
     }
 
     funcionesModal(){
