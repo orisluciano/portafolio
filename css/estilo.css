@@ -395,6 +395,11 @@ svg {
     width: 33%;
     border-radius: 10px;
   }
+  @media (max-width : 900px) {
+    .modal-content{
+        width: 95%;
+    }
+  }
   
   /* The Close Button */
   .close {
