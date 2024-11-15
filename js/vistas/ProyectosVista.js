@@ -64,7 +64,9 @@ class ProyectosVista {
     cargarCapturas(capturas){
         let carruselContainer = document.getElementById("carruselContainer");
         carruselContainer.innerHTML = "";
-        capturas.forEach(c => {
+        let containerBtns = document.getElementById("containerBtns");
+        containerBtns.innerHTML = "";
+        capturas.forEach((c, index) => {
             let d = document.createElement("div");
             d.className = "mySlides fade";
             carruselContainer.appendChild(d);
@@ -72,8 +74,9 @@ class ProyectosVista {
             img.src = c;
             img.style.width = "100%";
             d.appendChild(img);
+            containerBtns.appendChild(this.crearBotonImagen(index+1));
         });
-        let slideIndex
+        this.slideIndex = 1;
         this.showSlides(1);
         this.cargarBotonesCapturas(carruselContainer);
     }
@@ -94,6 +97,16 @@ class ProyectosVista {
             esto.plusSlides(1);
         }
         container.appendChild(siguientes);
+    }
+
+    crearBotonImagen(index){
+        let esto = this;
+        let span = document.createElement("span");
+        span.className = "dot";
+        span.onclick = function() {
+            esto.currentSlide(index);
+        }
+        return span;
     }
 
     plusSlides(n) {
