@@ -25,7 +25,7 @@ class ProyectosVista {
         let esto = this;
         let root = document.getElementById(this.utiles.ids.root);
         let div = document.createElement("div");
-        div.className = "displayFlex";
+        div.className = "width100 displayFlex contentCenter";
         root.appendChild(div);
         this.proyectos.forEach( e => {
             let id = "div" + e.nombre;
@@ -33,7 +33,7 @@ class ProyectosVista {
             caja.id = id;
             div.appendChild(caja);
             let img = document.createElement("img");
-            img.className = "img200 margin5";
+            img.className = "imgProyec margin5";
             img.src = e.img;
             img.onclick = function() {
                 esto.mostrarPopup(e.nombre, e.descripcion, e.links);

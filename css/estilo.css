@@ -80,6 +80,10 @@ ul {
     width: 70%;
 }
 
+.width100 {
+    width: 100%;
+}
+
 .widthAuto {
     width: auto;
 }
@@ -252,9 +256,17 @@ svg {
     height: 80px;
 }
 
+.imgProyec {
+    height: 200px;
+}
+
 @media (max-width : 900px) {
     .imgIcono{
         height: 40px;
+    }
+
+    .imgProyec {
+        height: 100px;
     }
 
     .letraMenu {
