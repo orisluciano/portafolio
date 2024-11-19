@@ -34,10 +34,10 @@ class Vista {
         this.botonesIds.forEach(e => {
             if (e === id) {
                 let marcado = document.getElementById(id);
-                marcado.className = "seleccionado marginLeft30 marginRight30 elementoCentrado";
+                marcado.className = "letraMenu seleccionado marginLeft30 marginRight30 elementoCentrado";
             } else {
                 let noMarcado = document.getElementById(e);
-                noMarcado.className = "noSeleccionado marginLeft30 marginRight30 elementoCentrado";
+                noMarcado.className = "letraMenu noSeleccionado marginLeft30 marginRight30 elementoCentrado";
             }
         });
     }

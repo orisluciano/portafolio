@@ -30,6 +30,7 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding:  0px;
 }
 
 .iconoLista:hover {
@@ -245,6 +246,20 @@ svg {
     margin-top: 20px;
     font-size: large;
     letter-spacing: 2px;
+}
+
+.imgIcono {
+    height: 80px;
+}
+
+@media (max-width : 900px) {
+    .imgIcono{
+        height: 40px;
+    }
+
+    .letraMenu {
+        font-size: 10px;
+    }
 }
 
 .img80 {
